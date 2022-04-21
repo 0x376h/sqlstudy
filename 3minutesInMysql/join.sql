@@ -1,0 +1,4 @@
+CREATE TEMPORARY TABLE tmp_a(
+		
+
+);
