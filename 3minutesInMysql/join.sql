@@ -1,4 +1,32 @@
-CREATE TEMPORARY TABLE tmp_a(
-		
 
+DROP TEMPORARY TABLE if EXISTS tmp_a;
+DROP TEMPORARY TABLE if EXISTS tmp_b;
+
+CREATE TEMPORARY TABLE tmp_a(
+	word VARCHAR(100) NOT null unique
 );
+
+CREATE TEMPORARY TABLE tmp_b(
+	word VARCHAR(100) NOT null unique
+);
+
+
+INSERT INTO tmp_a(word)
+SELECT  'a' UNION 
+SELECT 'b' UNION
+SELECT 'c';
+
+INSERT INTO tmp_b(word)
+SELECT 'a' UNION
+SELECT 'e' UNION
+SELECT 'f' UNION
+SELECT 'g' UNION
+SELECT 'h';
+
+SELECT * FROM tmp_a a union  
+SELECT * FROM tmp_b b
+
+
+
+
+
